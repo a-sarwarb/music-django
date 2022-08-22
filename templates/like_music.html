@@ -1,0 +1,10 @@
+
+<form method="POST" action="{% url 'like_music' song.pk %}">
+        {% csrf_token %}
+
+            <button type="submit" name="post_id" value="{{ song.id }}" class="btn  btn-sm text-warning">
+                <img id="cart-icon" width="40px" src="https://sticker-collection.com/stickers/plain/PinsBrawlStars/512/db6d6e59-b5c0-4d2c-a777-1610a087a9c7file_607986.webp">
+                {{ total_likes }} Like
+            </button>
+
+    </form>

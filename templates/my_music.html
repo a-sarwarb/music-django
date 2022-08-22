@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}NewMusic{% endblock title %}
+
+{% block content %}
+<h1 style="text-align: center;" class="text-warning">Создание нового трека</h1>
+
+<form class="text-warning" style="margin: 35%;" enctype="multipart/form-data" method="post">{% csrf_token %}
+  {{ form|crispy }}
+  <button style="padding: 1%; margin: 1%;" class="btn btn-warning" type="submit">
+    Отправить
+  </button>
+
+</form>
+
+{% endblock content %}

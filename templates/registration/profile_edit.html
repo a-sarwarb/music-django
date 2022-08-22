@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}РЕГИСТРАЦИЯ{% endblock title %}
+
+{% block content %}
+
+    <h2 class="text-warning" style="text-align: center">РЕДАКТИРОВАНИЕ</h2>
+    <form style="margin: 35%" class="text-warning" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <button style="margin: 1%" type="submit" class="btn btn-warning">ОТПРАВИТЬ</button>
+    </form>
+
+{% endblock content %}

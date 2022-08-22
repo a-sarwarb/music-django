@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/search_result.css' %}">
+<h1 class="text-warning">Результаты поиска</h1>
+{% if object_list %}
+{% for song in object_list %}
+<div class="container-audio">
+    <h3 class="text-warning">{{ song.singer }} - {{ song.name }}</h3>
+        <audio controls  loop >
+                   <source src="{{ song.songs.url }}" type="audio/ogg">
+
+               </audio>
+    </div>
+    <div class="container-audio">
+        <div class="colum1">
+            <div class="row">
+                <audio  controls>
+                    <source src="{{ song.songs.url }}" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+
+
+    </div>
+{% endfor %}
+{% else %}
+<h1>
+    Not found! We will add this song soon...
+</h1>
+{% endif %}
+{% endblock content %}

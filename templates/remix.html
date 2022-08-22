@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/songs_list.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+{% for song in object_list %}
+
+
+{% if song.category == 'Remix' %}
+<div class="container-audio">
+    <h3 class="text-warning">{{ song.singer }} - {{ song.name }}</h3>
+        <audio controls  loop >
+                   <source src="{{ song.songs.url }}" type="audio/ogg">
+
+        </audio>
+<div>
+    {% include 'like_music.html' %}
+    <br>
+    {% include 'dislike_music.html' %}
+</div>
+</div>
+    <div class="container-audio">
+        <div class="colum1">
+            <div class="row">
+                <audio  controls>
+                    <source src="{{ song.songs.url }}" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+
+
+    </div>
+{% endif %}
+
+{% endfor %}
+
+{% endblock content %}

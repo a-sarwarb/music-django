@@ -1,0 +1,9 @@
+
+<form method="POST" action="{% url 'dislike_music' song.pk %}">
+            {% csrf_token %}
+
+            <button type="submit" name="post_id" value="{{ song.id }}" class="btn btn-sm text-white">
+                <img  id="cart-icon" width="40px" src="https://abrakadabra.fun/uploads/posts/2022-02/1644752209_2-abrakadabra-fun-p-dizlaik-iz-bravl-stars-bez-fona-5.png">
+                {{ total_dislikes }} Dislike
+            </button>
+</form>

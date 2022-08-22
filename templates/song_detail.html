@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/songs_list.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+
+<div class="container-audio">
+    <h3 class="text-warning">{{ object.singer }} - {{ object.name }}</h3>
+        <audio controls  loop >
+                   <source src="{{ object.songs.url }}" type="audio/ogg">
+        </audio>
+
+<div>
+    {% include 'like_music.html' %}
+
+<br>
+
+     {% include 'dislike_music.html' %}
+</div>
+    <br>
+  {% if object.category == 'Pop music' %}
+        <a class="btn btn-sm" href="{% url 'pop_music' %}">
+            <img  id="cart-icon" width="40px" src="https://www.freeiconspng.com/uploads/back-undo-return-button-png-13.png">
+        </a>
+  {% elif object.category == 'Remix' %}
+        <a class="btn btn-sm" href="{% url 'remix' %}">
+            <img  id="cart-icon" width="40px" src="https://www.freeiconspng.com/uploads/back-undo-return-button-png-13.png">
+        </a>
+  {% elif object.category == 'Jazz' %}
+        <a class="btn btn-sm" href="{% url 'jazz' %}">
+            <img  id="cart-icon" width="40px" src="https://www.freeiconspng.com/uploads/back-undo-return-button-png-13.png">
+        </a>
+  {% elif object.category == 'Rap' %}
+         <a class="btn btn-sm" href="{% url 'rap' %}">
+             <img  id="cart-icon" width="40px" src="https://www.freeiconspng.com/uploads/back-undo-return-button-png-13.png">
+         </a>
+    {% endif %}
+
+
+
+</div>
+    <div class="container-audio">
+        <div class="colum1">
+            <div class="row">
+                <audio  controls>
+                    <source src="{{ object.songs.url }}" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+{% endblock content %}

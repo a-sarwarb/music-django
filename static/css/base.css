@@ -1,0 +1,59 @@
+body {
+    background-color: #8800ff;
+}
+
+
+.navbar {
+    background-color: #0667a2;
+    background-image: url("https://w0.peakpx.com/wallpaper/478/922/HD-wallpaper-neon-hills-aurora-lights-night.jpg");
+
+  min-height: 170px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+
+.navbar {
+    text-align: center/left/right;
+}
+
+.dropdown-menu {
+    background-color: #0a58ca;
+}
+
+.btn-group {
+     margin-right: 50%;
+     display: inline-block;
+     width: 200px;
+     padding: 8px;
+     color: #fff;
+     border: 1px solid #fff;
+     text-align: center;
+     outline: none;
+     text-decoration: none;
+}
+
+.navbar-brand {
+    font-size: 50px;
+}
+
+.dropdown {
+  margin: 5%;
+}
+
+.offcanvas-body {
+     background-image: url("https://w0.peakpx.com/wallpaper/478/922/HD-wallpaper-neon-hills-aurora-lights-night.jpg");
+}
+
+.offcanvas-header {
+    background-color: #8800ff;
+}
+
+
+
